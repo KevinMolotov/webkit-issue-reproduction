@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld v-for="i in 200" :key="i" msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
@@ -13,6 +13,12 @@ export default {
   name: 'home',
   components: {
     HelloWorld,
+  },
+
+  mounted() {
+    setTimeout(() => {
+      this.$router.push('/about');
+    }, 500);
   },
 };
 </script>
