@@ -1,0 +1,24 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="./vue.js"></script>
+  <style>
+      body{
+          background: white;
+          color: black;
+      }
+  </style>
+</head>
+<body>
+    <div class="container">
+            <component :is="comp" v-for="comp in comps"/>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
