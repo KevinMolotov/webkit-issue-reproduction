@@ -1,12 +1,39 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <component :is="comp" />
   </div>
 </template>
+
+<script>
+import About from '@/views/About.vue';
+import Home from '@/views/Home.vue';
+
+export default {
+  name: 'App',
+
+  components: {
+    About,
+    Home,
+  },
+
+  data() {
+    return {
+      comp: Home,
+    };
+  },
+
+  mounted() {
+    setInterval(() => {
+      this.comp = this.comp === Home
+        ? About
+        : Home;
+    }, 500);
+  },
+};
+</script>
+
 
 <style lang="scss">
 #app {
